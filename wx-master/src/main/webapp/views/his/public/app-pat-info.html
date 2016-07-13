@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>患者详情</title>
+    <link rel="stylesheet" href="../../../assert/weui/style/weui.min.css"/>
+    <style>
+        .reg-remind
+        {
+            margin:10px;
+        }
+        .reg-remind-list
+        {
+            background:#fff;
+            border:1px dashed #ccc;
+            border-radius:5px;
+            padding:10px;
+            margin-bottom:10px;
+            font-size:17px;
+        }
+        .wblock-span
+        {
+            display:block;
+
+        }
+        .margin10-r
+        {
+            margin-right:10px;
+        }
+        .reg-btn-new
+        {
+            width:47.5%;
+            height:35px;
+            display:inline-block;
+            text-align:center;
+            border:2px solid #3aa1e7;
+            line-height:35px;
+            border-radius:5px;
+        }
+
+        .weui_btn_area
+        {
+            padding:10px;
+        }
+        .color-green
+        {
+            color:#0a0;
+        }
+    </style>
+ </head>
+<body>
+ <div id="deptInfo">
+     <div class="weui_cells weui_cells_form">
+         <input type="hidden" id="patId" value=""/>
+          <div class="weui_cell">
+             <div class="weui_cell_hd"><label class="weui_label">姓&nbsp;&nbsp;&nbsp;名</label></div>
+             <div class="weui_cell_bd weui_cell_primary">
+                 <input id="name"  class="weui_input" type="text" value=""  style="margin-left: 168px;" />
+             </div>
+         </div>
+         <div class="weui_cell">
+             <div class="weui_cell_hd"><label class="weui_label">身份证</label></div>
+             <div class="weui_cell_bd weui_cell_primary">
+                 <input id="idCard" class="weui_input" type="text" pattern="[0-9a-z]"  value=""   style="margin-left: 70px;" />
+             </div>
+         </div>
+         <div class="weui_cell">
+             <div class="weui_cell_hd"><label class="weui_label">手机号</label></div>
+             <div class="weui_cell_bd weui_cell_primary">
+                 <input id="phone" class="weui_input" type="number" value=""  style="margin-left: 136px;"/>
+             </div>
+         </div>
+
+    </div>
+</div>
+</div>
+</div>
+<div class="weui_dialog_alert" style="display: none " id="alert">
+     <div class="weui_mask"></div>
+     <div class="weui_dialog">
+         <div class="weui_dialog_hd">
+             <strong class="weui_dialog_title">
+                 <i class="weui_icon_msg weui_icon_warn"></i><br>删除失败
+             </strong>
+         </div>
+         <div class="weui_dialog_bd">默认用户不能删除，只能更换。</div>
+         <div class="weui_dialog_ft">
+             <a href="javascript:;" class="weui_btn_dialog default" id="no2">确定</a>
+         </div>
+     </div>
+ </div>
+
+ <div class="weui_btn_area">
+     <a onclick="del()"  class="reg-btn-new color-blue" >删除绑定</a>
+     <!--<a onclick="update()" class="reg-btn-new">保存修改</a>-->
+     <a onclick="moren()" class="reg-btn-new" id="moren">设为默认</a>
+ </div>
+  <div class="weui_btn_area">
+     <a class="reg-btn-new color-blue"  id="today" onclick="today()">当天挂号</a>
+     <a class="reg-btn-new" id="prepare" style="color:#0a0;" onclick="prepare()">预约挂号</a>
+ </div>
+ <!--<div class="weui_btn_area">-->
+     <!--<a onclick="moren()" class="weui_btn weui_btn_primary" id="moren">设为默认</a>-->
+  <!--</div>-->
+ <!--<a onclick="moren()" class="weui_btn weui_btn_primary" id="moren" style='position: absolute; bottom: 12%; display: block;width:100%; '>设为默认</a>-->
+ <!--<a onclick="del()" class="weui_btn weui_btn_primary" style='position: absolute; bottom: 24%; display: block;width:100%; '>删除</a>-->
+ <!--<a onclick="update()" class="weui_btn weui_btn_primary" style='position: absolute; bottom: 0; display: block;width:100%; '>保存修改</a>-->
+</body>
+<script src="../../../assert/angular/angular.min.js"></script>
+<script src="../../../assert/plugins/jQuery/jQuery-2.1.4.min.js"></script>
+<script src="../../../javascript/app-pat-info.js"></script>
+</html>

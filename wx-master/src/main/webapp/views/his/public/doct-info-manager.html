@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head lang="en">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="robots" content="noindex, nofollow"/>
+    <!--<link rel="stylesheet" href="/ckeditor/fckeditor/sample.css" />-->
+    <link rel="stylesheet" href="/assert/easyui/themes/default/easyui.css">
+    <link rel="stylesheet" href="/assert/easyui/themes/color.css">
+    <link rel="stylesheet" href="/assert/easyui/themes/icon.css">
+    <link rel="stylesheet" href="/style/common.css">
+    <!--<script src="../ckeditor.js"></script>-->
+    <!--http://localhost/views/his/public/assert/plugins/fckeditor/samples/js/sample.js-->
+
+    <!--E:\workspace\jims-public\src\main\webapp\assert\plugins\fckeditor\ckeditor.js-->
+    <!--http://localhost/views/his/public/assert/plugins/fckeditor/samples/css/samples.css-->
+    <!--<link rel="stylesheet" href="../../../assert/plugins/fckeditor/samples/css/samples.css">-->
+
+    <script type="text/javascript">
+        window.onload = function()
+        {
+            CKEDITOR.replace( 'description' );
+        };
+    </script>
+</head>
+<body>
+<div id="lay" class="easyui-layout" style="width: 100%;height:80%" border="false" fit="true">
+
+    <div region="center">
+        <table id="t_user" class="easyui-datagrid"></table>
+    </div>
+</div>
+
+<div id="dlg" modal="true" draggable="false" class="easyui-dialog" style="width:700px;height:500px;padding:10px 20px"
+     closed="true" buttons="#dlg-buttons" data-options="modal:true">
+    <div class="ftitle">医生信息维护</div>
+    <form id="fm" method="post" novalidate>
+        <div class="fitem" style="display:none">
+            <label>编号</label>
+            <input name="id" id="docId" class="easyui-textbox" disabled="true" value="">
+        </div>
+        <div class="fitem">
+            <label>医生姓名：</label>
+            <input id="name" name="name" class="easyui-textbox" required="true" value="">
+        </div>
+        <div class="fitem">
+            <label>医生头衔：</label>
+            <input id="title" name="title" class="easyui-textbox" required="true" value="">
+        </div>
+        <div class="fitem">
+            <label>医院编号：</label>
+            <select id="cc" name="hospitalName" class="easyui-combobox"></select>
+        </div>
+        <div class="fitem" id="uploadDiv">
+            <label>上传头像：</label>
+            <input id="fileToUpload" type="file" size="45" name="fileToUpload">
+            <a href="javascript:void(0)" id="uploadBtn" class="easyui-linkbutton c6" iconCls="icon-ok" >上传</a>
+             <br/>
+            <img src="" id="viewImg"/>
+         </div>
+         <div class="fitem" style="display:none;" id="headDiv">
+            <label>头像地址：</label>
+            <input id="headUrl" name="headUrl" class="easyui-textbox" value="" disabled="disabled">
+        </div>
+        <div class="fitem">
+            <label>个人描述：</label>
+            <textarea id="description" style="width: 160px;height:200px;" name="description"></textarea>
+            <script type="text/javascript">CKEDITOR.replace('description');</script>
+         </div>
+    </form>
+</div>
+<div id="dlg-buttons">
+    <a href="javascript:void(0)" id="submitBtn" class="easyui-linkbutton c6" iconCls="icon-ok" >确定</a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-cancel"
+       onclick="javascript:$('#dlg').dialog('close')" >关闭</a>
+</div>
+
+<div id="tb" style="padding:2px 5px;">
+    <!--医生姓名:<input id="s_name" name="name" class="easyui-textbox" value=""/>-->
+    <!--<input id="s_hospitalId" name="hospialId" class="easyui-textbox" style="width:160px;" value=""/>-->
+    <!--<a id="searchSubmitbtn" class="easyui-linkbutton" iconCls="icon-search">查询</a>-->
+    <a href="#" id="addBtn" class="easyui-linkbutton" iconCls="icon-add">添加</a>
+    <a href="#" id="editBtn" class="easyui-linkbutton" iconCls="icon-edit">修改</a>
+    <a href="#" id="delBtn" class="easyui-linkbutton" iconCls="icon-remove">删除</a>
+</div>
+
+
+<script type="text/javascript" src="/assert/easyui/jquery.min.js"></script>
+<script type="text/javascript" src="/assert/easyui/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="/assert/easyui/locale/easyui-lang-zh_CN.js"></script>
+<script type="text/javascript" src="/javascript/common/ajaxfileupload.js"></script>
+<script type="text/javascript" src="../../../javascript/doct-info-manager.js" charset="UTF-8"></script>
+<script type="text/javascript" src="/javascript/tool.js"></script>
+<!--<script src="../../../assert/plugins/fckeditor/samples/js/sample.js"></script>-->
+<!--E:\workspace\jims-public\src\main\webapp\assert\plugins\fckeditor\ckeditor.js-->
+<script src="../../../assert/plugins/ckeditor/ckeditor.js"></script>
+ </body>
+</html>
